@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const choices = ["Rock", "Paper", "Scissor"]
+
+    function getComputerChoice() {
+        return Math.floor(Math.random() * choices.length)
+    }
+
+    const playerInput = parseInt(prompt("Enter your number between 1, 2, or 3"))
+
+    function playGame(result) {
+
+        const computerChoice = getComputerChoice()
+        const playerChoice = playerInput
+
+        if (playerInput !==1 && playerInput !== 2 && playerInput !== 3) {
+            result = "Invalid input"
+        } else if (playerChoice === computerChoice) {
+            result = "Draw"
+        } else if ((playerChoice == 1 && computerChoice == 3) ||
+                    (playerChoice == 2 && computerChoice == 1) ||
+                    (playerChoice == 3 && computerChoice == 2)) {
+                        result = playerChoice + " vs " + computerChoice + ", You Win!"
+                    }
+        else {
+            result = playerChoice + " vs " + computerChoice + ", You Lose!"
+        }
+
+        console.log(result)
+    }
+
+    playGame()
+</script>
+
+</html>
+
